@@ -122,7 +122,16 @@ public class MainActivity extends Activity implements OnClickListener {
 
         Log.d("word search", searchWords.size() + " matching word(s) have been found.");
 
-        for (int i = 0; i < searchWords.size(); i++) {
+        if (searchWords.size() > 20){
+            Log.d("word search", "Returning first 20 matches.");
+            for (int i = 0; i < 20; i++) {
+                Log.d("word search", "Word: " + searchWords.get(i).getName());
+                Log.d("word search", "Definition: " + searchWords.get(i).getDefinition());
+                Log.d("word search", "Other info: " + searchWords.get(i).getOther());
+            }
+        }
+
+        else for (int i = 0; i < searchWords.size(); i++) {
             Log.d("word search", "Word: " + searchWords.get(i).getName());
             Log.d("word search", "Definition: " + searchWords.get(i).getDefinition());
             Log.d("word search", "Other info: " + searchWords.get(i).getOther());
